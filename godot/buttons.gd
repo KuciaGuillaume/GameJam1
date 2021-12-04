@@ -15,6 +15,9 @@ func _ready():
 func _button_quit():
 	get_tree().quit()
 	pass
+	
+func _add_turret1():
+	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

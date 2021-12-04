@@ -1780,3 +1780,15 @@ scale = Vector2( 0.35, 0.35 )
 z_index = 1
 texture = ExtResource( 12 )
 offset = Vector2( 42, -25 )
+
+[node name="Turret_button" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="Turret_button"]
+margin_left = 960.0
+margin_top = 192.0
+margin_right = 1024.0
+margin_bottom = 256.0
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

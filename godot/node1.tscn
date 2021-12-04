@@ -9,7 +9,6 @@
 [ext_resource path="res://Assets décors/[OC] House for RPG games!.png" type="Texture" id=7]
 [ext_resource path="res://Assets décors/ath.png" type="Texture" id=8]
 [ext_resource path="res://Assets décors/tourelle.png" type="Texture" id=9]
-[ext_resource path="res://tourelle.gd" type="Script" id=10]
 
 [sub_resource type="TileSet" id=1]
 0/name = "assets.png 0"
@@ -1614,6 +1613,8 @@ flags = 4
 radius = 11.0
 height = 2.0
 
+[sub_resource type="GDScript" id=12]
+
 [node name="node" type="Node2D"]
 
 [node name="Background" type="Node" parent="."]
@@ -1717,14 +1718,14 @@ anchor_left = 0.074
 anchor_top = 0.896
 anchor_right = 0.12
 anchor_bottom = 0.963
-margin_left = -0.0800018
-margin_top = -1.68005
-margin_right = -0.400009
-margin_bottom = 0.959961
+margin_left = 6.11055
+margin_top = 2.49475
+margin_right = -6.20946
+margin_bottom = 4.13477
 icon = ExtResource( 9 )
 flat = true
 expand_icon = true
-script = ExtResource( 10 )
+script = SubResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

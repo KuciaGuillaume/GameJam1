@@ -1,16 +1,19 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://enemy/enemy.gd" type="Script" id=1]
 [ext_resource path="res://main.gd" type="Script" id=2]
 [ext_resource path="res://buttons.gd" type="Script" id=3]
 [ext_resource path="res://Assets décors/assets.png" type="Texture" id=4]
-[ext_resource path="res://Assets décors/tourelle.png" type="Texture" id=5]
+[ext_resource path="res://Turrets/sprites/canon1.png" type="Texture" id=5]
 [ext_resource path="res://Assets décors/ath.png" type="Texture" id=6]
 [ext_resource path="res://celianna_castles.png.png" type="Texture" id=7]
 [ext_resource path="res://enemy/creature-sheet.png" type="Texture" id=8]
 [ext_resource path="res://Assets décors/[OC] House for RPG games!.png" type="Texture" id=9]
 [ext_resource path="res://Assets décors/celianna_farmnature_tileset.png" type="Texture" id=10]
 [ext_resource path="res://Assets décors/Texturespack.png" type="Texture" id=11]
+[ext_resource path="res://Turrets/sprites/canon3.png" type="Texture" id=12]
+[ext_resource path="res://Turrets/sprites/canon2.png" type="Texture" id=13]
+[ext_resource path="res://globals.gd" type="Script" id=14]
 
 [sub_resource type="Curve2D" id=12]
 _data = {
@@ -1620,8 +1623,6 @@ flags = 4
 37/shapes = [  ]
 37/z_index = 0
 
-[sub_resource type="GDScript" id=11]
-
 [node name="node" type="Node2D"]
 script = ExtResource( 2 )
 
@@ -1630,8 +1631,10 @@ curve = SubResource( 12 )
 
 [node name="enemy" type="PathFollow2D" parent="Path"]
 position = Vector2( 1932, 290 )
-rotation = -3.10232
+rotation = -3.10226
+scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
+speed = 2
 
 [node name="Kinematic" type="KinematicBody2D" parent="Path/enemy"]
 position = Vector2( 12.8479, 16.8077 )
@@ -1724,7 +1727,7 @@ tile_set = SubResource( 10 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 65821, 37, 0, 11272214, 37, 0 )
+tile_data = PoolIntArray( 65821, 37, 0, 11272214, 37, 0, 11272235, 37, 0, 11272255, 37, 0 )
 
 [node name="intéraction avec ATH" type="Node" parent="."]
 
@@ -1746,28 +1749,65 @@ __meta__ = {
 }
 button_name = "_button_quit"
 
-[node name="tourelles" type="Button" parent="intéraction avec ATH"]
+[node name="tourelle1" type="Button" parent="intéraction avec ATH"]
 anchor_left = 0.074
 anchor_top = 0.896
 anchor_right = 0.12
 anchor_bottom = 0.963
-margin_left = 6.11055
-margin_top = 2.49475
-margin_right = -6.20946
-margin_bottom = 4.13477
+margin_left = 4.92
+margin_top = -1.68005
+margin_right = -7.40001
+margin_bottom = -0.0400391
 icon = ExtResource( 5 )
 flat = true
 expand_icon = true
-script = SubResource( 11 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+button_name = "select_turret1"
+
+[node name="tourelle2" type="Button" parent="intéraction avec ATH"]
+anchor_left = 0.074
+anchor_top = 0.896
+anchor_right = 0.12
+anchor_bottom = 0.963
+margin_left = 139.92
+margin_top = 0.319946
+margin_right = 127.6
+margin_bottom = 1.95996
+icon = ExtResource( 13 )
+flat = true
+expand_icon = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+button_name = "select_turret2"
+
+[node name="tourelle3" type="Button" parent="intéraction avec ATH"]
+anchor_left = 0.074
+anchor_top = 0.896
+anchor_right = 0.12
+anchor_bottom = 0.963
+margin_left = 267.92
+margin_top = 1.31995
+margin_right = 255.6
+margin_bottom = 2.95996
+icon = ExtResource( 12 )
+flat = true
+expand_icon = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+button_name = "select_turret3"
 
 [node name="Turrets" type="Node" parent="."]
 
 [node name="Turret_button" type="Node2D" parent="."]
 
-[node name="Button" type="Button" parent="Turret_button"]
+[node name="Button1" type="Button" parent="Turret_button"]
 margin_left = 960.216
 margin_top = 191.297
 margin_right = 1024.22
@@ -1776,7 +1816,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-button_name = "_add_turret1"
+button_name = "_add_turret"
 
 [node name="Button2" type="Button" parent="Turret_button"]
 margin_left = 639.199
@@ -1787,7 +1827,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-button_name = "_add_turret1"
+button_name = "_add_turret"
 
 [node name="Button3" type="Button" parent="Turret_button"]
 margin_left = 192.087
@@ -1798,7 +1838,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-button_name = "_add_turret1"
+button_name = "_add_turret"
 
 [node name="Button4" type="Button" parent="Turret_button"]
 margin_left = 191.329
@@ -1809,7 +1849,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-button_name = "_add_turret1"
+button_name = "_add_turret"
 
 [node name="Button5" type="Button" parent="Turret_button"]
 margin_left = 640.314
@@ -1820,4 +1860,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-button_name = "_add_turret1"
+button_name = "_add_turret"
+
+[node name="globals" type="Node" parent="."]
+script = ExtResource( 14 )

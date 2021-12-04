@@ -1,11 +1,12 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Turrets/sprites/bullet.png" type="Texture" id=1]
+[ext_resource path="res://Turrets/sprites/bullet2.png" type="Texture" id=1]
 [ext_resource path="res://bullet.gd" type="Script" id=2]
 
 [node name="Bullet" type="Node2D"]
 
 [node name="bullet" type="Sprite" parent="."]
 position = Vector2( 29.93, 30 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )

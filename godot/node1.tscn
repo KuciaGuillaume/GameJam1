@@ -1609,14 +1609,14 @@ flags = 4
 37/shapes = [  ]
 37/z_index = 0
 
-[sub_resource type="GDScript" id=12]
+[sub_resource type="GDScript" id=11]
 
-[sub_resource type="Curve2D" id=13]
+[sub_resource type="Curve2D" id=12]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1932, 290, 0, 0, 0, 0, 1484, 290, 0, 0, 0, 0, 1437, 262, 0, 0, 0, 0, 1439, 159, 0, 0, 0, 0, 1401, 122, 0, 0, 0, 0, 1159, 123, 0, 0, 0, 0, 1117, 161, 0, 0, 0, 0, 1120, 313, 0, 0, 0, 0, 1088, 355, 0, 0, 0, 0, 834, 349, 0, 0, 0, 0, 797, 382, 0, 0, 0, 0, 800, 508, 0, 0, 0, 0, 768, 547, 0, 0, 0, 0, 528, 544, 0, 0, 0, 0, 474, 516, 0, 0, 0, 0, 483, 414, 0, 0, 0, 0, 437, 378, 0, 0, 0, 0, 288, 386, 0, 0, 0, 0, 212, 339, 0, 0, 0, 0, 191, 285, 0, 0, 0, 0, 191, 204 )
 }
 
-[sub_resource type="CapsuleShape2D" id=11]
+[sub_resource type="CapsuleShape2D" id=13]
 radius = 11.0
 height = 2.0
 
@@ -1712,13 +1712,13 @@ margin_bottom = 4.13477
 icon = ExtResource( 9 )
 flat = true
 expand_icon = true
-script = SubResource( 12 )
+script = SubResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Path" type="Path2D" parent="."]
-curve = SubResource( 13 )
+curve = SubResource( 12 )
 
 [node name="enemy" type="PathFollow2D" parent="Path"]
 position = Vector2( 1932, 290 )
@@ -1739,4 +1739,4 @@ hframes = 4
 
 [node name="CollisionShape" type="CollisionShape2D" parent="Path/enemy/Kinematic"]
 position = Vector2( 12, 15 )
-shape = SubResource( 11 )
+shape = SubResource( 13 )

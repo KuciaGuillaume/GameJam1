@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://enemy/creature-sheet.png" type="Texture" id=1]
 [ext_resource path="res://enemy/enemy.gd" type="Script" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://Assets décors/[OC] House for RPG games!.png" type="Texture" id=7]
 [ext_resource path="res://Assets décors/ath.png" type="Texture" id=8]
 [ext_resource path="res://Assets décors/tourelle.png" type="Texture" id=9]
+[ext_resource path="res://Turrets/turret.gd" type="Script" id=10]
+[ext_resource path="res://Turrets/sprites/base.png" type="Texture" id=11]
+[ext_resource path="res://Turrets/sprites/canon1.png" type="Texture" id=12]
 
 [sub_resource type="TileSet" id=1]
 0/name = "assets.png 0"
@@ -1740,3 +1743,21 @@ hframes = 4
 [node name="CollisionShape" type="CollisionShape2D" parent="Path/enemy/Kinematic"]
 position = Vector2( 12, 15 )
 shape = SubResource( 13 )
+
+[node name="Turret1" type="Node2D" parent="."]
+position = Vector2( 672, 412 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="base" type="Sprite" parent="Turret1"]
+scale = Vector2( 0.25, 0.25 )
+z_index = 1
+texture = ExtResource( 11 )
+
+[node name="canon" type="Sprite" parent="Turret1"]
+scale = Vector2( 0.35, 0.35 )
+z_index = 1
+texture = ExtResource( 12 )
+offset = Vector2( 42, -25 )

@@ -13,7 +13,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _button_quit():
-	OS.window_fullscreen = !OS.window_fullscreen
+	get_tree().quit()
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

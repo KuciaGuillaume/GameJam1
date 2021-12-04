@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://enemy/creature-sheet.png" type="Texture" id=1]
 [ext_resource path="res://enemy/enemy.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Turrets/turret.gd" type="Script" id=10]
 [ext_resource path="res://Turrets/sprites/base.png" type="Texture" id=11]
 [ext_resource path="res://Turrets/sprites/canon1.png" type="Texture" id=12]
+[ext_resource path="res://buttons.gd" type="Script" id=13]
 
 [sub_resource type="TileSet" id=1]
 0/name = "assets.png 0"
@@ -1699,11 +1700,29 @@ tile_set = SubResource( 10 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 11272214, 37, 0 )
+tile_data = PoolIntArray( 65821, 37, 0, 11272214, 37, 0 )
 
 [node name="intéraction avec ATH" type="Node" parent="."]
 
-[node name="Button" type="Button" parent="intéraction avec ATH"]
+[node name="quit" type="Button" parent="intéraction avec ATH"]
+anchor_left = 0.074
+anchor_top = 0.896
+anchor_right = 0.12
+anchor_bottom = 0.963
+margin_left = 1689.21
+margin_top = -959.31
+margin_right = 1676.89
+margin_bottom = -957.67
+text = "QUIT"
+flat = true
+expand_icon = true
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+button_name = "_button_quit"
+
+[node name="tourelles" type="Button" parent="intéraction avec ATH"]
 anchor_left = 0.074
 anchor_top = 0.896
 anchor_right = 0.12

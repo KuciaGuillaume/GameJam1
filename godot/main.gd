@@ -10,13 +10,13 @@ var build_type
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	pass
 
-func _unhandled_input(event):
+func _unhandled_input(_event):
 	pass
 
-func initiate_build_mode(tower_type):
+func initiate_build_mode(_tower_type):
 	pass
 
 func update_tower_preview():

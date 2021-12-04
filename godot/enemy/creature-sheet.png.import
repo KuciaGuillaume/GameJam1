@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/creature-sheet.png-b8258c620347237c396ec2e17404390a.stex"
+path="res://.import/creature-sheet.png-d167dee916cf87e81fe23322660558f3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/creature-sheet.png"
-dest_files=[ "res://.import/creature-sheet.png-b8258c620347237c396ec2e17404390a.stex" ]
+source_file="res://enemy/creature-sheet.png"
+dest_files=[ "res://.import/creature-sheet.png-d167dee916cf87e81fe23322660558f3.stex" ]
 
 [params]
 

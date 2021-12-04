@@ -12,6 +12,7 @@ func _ready():
 	for i in get_tree().get_nodes_in_group("build_buttons"):
 		i.connect("pressed", self, "initiate_build_node", [i.get_name()])
 
+<<<<<<< HEAD
 func _process(delta):
 	if build_node:
 		update_tower_preview()
@@ -27,6 +28,16 @@ func initiate_build_mode(tower_type):
 	build_type = tower_type + "T1"
 	build_node = true
 	get_node("UI").set_tower_preview(build_type, get_global_mouse_position())
+=======
+func _process(_delta):
+	pass
+
+func _unhandled_input(_event):
+	pass
+
+func initiate_build_mode(_tower_type):
+	pass
+>>>>>>> e90e37cc8ad7921cb804c73bdc8d7173118bb7b5
 
 func update_tower_preview():
 	var mouse_position = get_global_mouse_position()

@@ -12,6 +12,15 @@
 [ext_resource path="res://Assets décors/celianna_farmnature_tileset.png" type="Texture" id=10]
 [ext_resource path="res://Assets décors/Texturespack.png" type="Texture" id=11]
 
+[sub_resource type="Curve2D" id=12]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1932, 290, 0, 0, 0, 0, 1928.72, 290.186, 0, 0, 0, 0, 1920.33, 287.896, 0, 0, 0, 0, 1484, 290, 0, 0, 0, 0, 1437, 262, 0, 0, 0, 0, 1439, 159, 0, 0, 0, 0, 1401, 122, 0, 0, 0, 0, 1159, 123, 0, 0, 0, 0, 1117, 161, 0, 0, 0, 0, 1120, 313, 0, 0, 0, 0, 1088, 355, 0, 0, 0, 0, 834, 349, 0, 0, 0, 0, 797, 382, 0, 0, 0, 0, 800, 508, 0, 0, 0, 0, 768, 547, 0, 0, 0, 0, 528, 544, 0, 0, 0, 0, 474, 516, 0, 0, 0, 0, 483, 414, 0, 0, 0, 0, 437, 378, 0, 0, 0, 0, 288, 386, 0, 0, 0, 0, 212, 339, 0, 0, 0, 0, 191, 285, 0, 0, 0, 0, 191, 204 )
+}
+
+[sub_resource type="CapsuleShape2D" id=13]
+radius = 11.0
+height = 2.0
+
 [sub_resource type="TileSet" id=1]
 0/name = "assets.png 0"
 0/texture = ExtResource( 4 )
@@ -1613,17 +1622,33 @@ flags = 4
 
 [sub_resource type="GDScript" id=11]
 
-[sub_resource type="Curve2D" id=12]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1932, 290, 0, 0, 0, 0, 1484, 290, 0, 0, 0, 0, 1437, 262, 0, 0, 0, 0, 1439, 159, 0, 0, 0, 0, 1401, 122, 0, 0, 0, 0, 1159, 123, 0, 0, 0, 0, 1117, 161, 0, 0, 0, 0, 1120, 313, 0, 0, 0, 0, 1088, 355, 0, 0, 0, 0, 834, 349, 0, 0, 0, 0, 797, 382, 0, 0, 0, 0, 800, 508, 0, 0, 0, 0, 768, 547, 0, 0, 0, 0, 528, 544, 0, 0, 0, 0, 474, 516, 0, 0, 0, 0, 483, 414, 0, 0, 0, 0, 437, 378, 0, 0, 0, 0, 288, 386, 0, 0, 0, 0, 212, 339, 0, 0, 0, 0, 191, 285, 0, 0, 0, 0, 191, 204 )
-}
-
-[sub_resource type="CapsuleShape2D" id=13]
-radius = 11.0
-height = 2.0
-
 [node name="node" type="Node2D"]
 script = ExtResource( 2 )
+
+[node name="Path" type="Path2D" parent="."]
+curve = SubResource( 12 )
+
+[node name="enemy" type="PathFollow2D" parent="Path"]
+position = Vector2( 1932, 290 )
+rotation = 3.14159
+script = ExtResource( 1 )
+
+[node name="Kinematic" type="KinematicBody2D" parent="Path/enemy"]
+position = Vector2( 12.8479, 16.8077 )
+rotation = 3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Path/enemy/Kinematic"]
+position = Vector2( 12, 12 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 4
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Path/enemy/Kinematic"]
+position = Vector2( 12, 15 )
+shape = SubResource( 13 )
 
 [node name="Background" type="Node" parent="."]
 
@@ -1737,30 +1762,6 @@ script = SubResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Path" type="Path2D" parent="."]
-curve = SubResource( 12 )
-
-[node name="enemy" type="PathFollow2D" parent="Path"]
-position = Vector2( 1932, 290 )
-rotation = 3.14159
-script = ExtResource( 1 )
-
-[node name="Kinematic" type="KinematicBody2D" parent="Path/enemy"]
-position = Vector2( 12, 15 )
-rotation = 3.14159
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Path/enemy/Kinematic"]
-position = Vector2( 12, 12 )
-texture = ExtResource( 8 )
-hframes = 4
-
-[node name="CollisionShape" type="CollisionShape2D" parent="Path/enemy/Kinematic"]
-position = Vector2( 12, 15 )
-shape = SubResource( 13 )
 
 [node name="Turrets" type="Node" parent="."]
 

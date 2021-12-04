@@ -4,6 +4,10 @@ export var button_name = ""
 onready var template_turrets = [preload("res://Turret1.tscn"), preload("res://Turret2.tscn"), preload("res://Turret3.tscn")]
 onready var turret_container = get_node("/root/node/Turrets")
 
+var canon_text1 = preload("res://Turrets/sprites/canon1.png")
+var canon_text2 = preload("res://Turrets/sprites/canon2.png")
+var canon_text3 = preload("res://Turrets/sprites/canon3.png")
+
 func _ready():
 	self.connect("pressed", self, button_name)
 
@@ -15,20 +19,26 @@ var is_turret = false
 func select_turret1():
 	if (get_node("/root/node/globals").selected_turret == 1):
 		get_node("/root/node/globals").selected_turret = 0
+		get_node("/root/node/preview_turret/preview").set_texture(null)
 	else:
 		get_node("/root/node/globals").selected_turret = 1
+		get_node("/root/node/preview_turret/preview").set_texture(canon_text1)
 
 func select_turret2():
 	if (get_node("/root/node/globals").selected_turret == 2):
 		get_node("/root/node/globals").selected_turret = 0
+		get_node("/root/node/preview_turret/preview").set_texture(null)
 	else:
 		get_node("/root/node/globals").selected_turret = 2
+		get_node("/root/node/preview_turret/preview").set_texture(canon_text2)
 
 func select_turret3():
 	if (get_node("/root/node/globals").selected_turret == 3):
 		get_node("/root/node/globals").selected_turret = 0
+		get_node("/root/node/preview_turret/preview").set_texture(null)
 	else:
 		get_node("/root/node/globals").selected_turret = 3
+		get_node("/root/node/preview_turret/preview").set_texture(canon_text3)
 
 
 func _add_turret():

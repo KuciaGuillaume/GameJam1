@@ -14,4 +14,5 @@ func get_damages(damages):
 	hp -= damages
 	if (hp <= 0):
 		set_offset(0)
+		hp_max *= 1.5
 		hp = hp_max

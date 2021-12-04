@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 [gd_scene load_steps=25 format=2]
-=======
-[gd_scene load_steps=30 format=2]
->>>>>>> e90e37cc8ad7921cb804c73bdc8d7173118bb7b5
 
 [ext_resource path="res://enemy/creature-sheet.png" type="Texture" id=1]
 [ext_resource path="res://enemy/enemy.gd" type="Script" id=2]
@@ -15,8 +11,6 @@
 [ext_resource path="res://Assets décors/tourelle.png" type="Texture" id=9]
 [ext_resource path="res://buttons.gd" type="Script" id=13]
 [ext_resource path="res://main.gd" type="Script" id=14]
-[ext_resource path="res://Turrets/sprites/bullet.png" type="Texture" id=15]
-[ext_resource path="res://Turrets/bullet.gd" type="Script" id=16]
 
 [sub_resource type="TileSet" id=1]
 0/name = "assets.png 0"
@@ -1768,7 +1762,6 @@ hframes = 4
 position = Vector2( 12, 15 )
 shape = SubResource( 13 )
 
-<<<<<<< HEAD
 [node name="Turrets" type="Node" parent="."]
 
 [node name="Turret_button" type="Node2D" parent="."]
@@ -1827,37 +1820,3 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 button_name = "_add_turret1"
-=======
-[node name="Turret1" type="Node2D" parent="."]
-position = Vector2( 672, 412 )
-script = ExtResource( 10 )
-
-[node name="base" type="Sprite" parent="Turret1"]
-scale = Vector2( 0.25, 0.25 )
-z_index = 1
-texture = ExtResource( 11 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="bullet" type="Sprite" parent="Turret1"]
-position = Vector2( 78, 0 )
-rotation = -1.5865
-scale = Vector2( 1, 1.00703 )
-z_index = 1
-texture = ExtResource( 15 )
-script = ExtResource( 16 )
-
-[node name="canon" type="Sprite" parent="Turret1"]
-rotation = 6.28319
-scale = Vector2( 0.35, 0.35 )
-z_index = 1
-texture = ExtResource( 12 )
-offset = Vector2( 42, -25 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Position2D" type="Position2D" parent="Turret1/canon"]
-position = Vector2( 130, 0 )
->>>>>>> e90e37cc8ad7921cb804c73bdc8d7173118bb7b5

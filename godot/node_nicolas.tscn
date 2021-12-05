@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://enemy/enemy.gd" type="Script" id=1]
 [ext_resource path="res://main.gd" type="Script" id=2]
@@ -15,13 +15,23 @@
 [ext_resource path="res://Turrets/sprites/canon2.png" type="Texture" id=13]
 [ext_resource path="res://globals.gd" type="Script" id=14]
 [ext_resource path="res://preview_turret.gd" type="Script" id=15]
+[ext_resource path="res://enemy_b.gd" type="Script" id=16]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1932, 290, 0, 0, 0, 0, 1928.72, 290.186, 0, 0, 0, 0, 1920.33, 287.896, 0, 0, 0, 0, 1484, 290, 0, 0, 0, 0, 1437, 262, 0, 0, 0, 0, 1439, 159, 0, 0, 0, 0, 1401, 122, 0, 0, 0, 0, 1159, 123, 0, 0, 0, 0, 1117, 161, 0, 0, 0, 0, 1120, 313, 0, 0, 0, 0, 1088, 355, 0, 0, 0, 0, 834, 349, 0, 0, 0, 0, 797, 382, 0, 0, 0, 0, 800, 508, 0, 0, 0, 0, 768, 547, 0, 0, 0, 0, 528, 544, 0, 0, 0, 0, 474, 516, 0, 0, 0, 0, 483, 414, 0, 0, 0, 0, 437, 378, 0, 0, 0, 0, 288, 386, 0, 0, 0, 0, 212, 339, 0, 0, 0, 0, 191, 285, 0, 0, 0, 0, 191, 204 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1932, 290, 0, 0, 0, 0, 1928.72, 290.186, 0, 0, 0, 0, 1920.33, 287.896, 31.839, 2.24746, -31.839, -2.24746, 1484, 290, 1.87288, 11.2373, -1.87288, -11.2373, 1437, 262, -0.374577, 35.2102, 0.374577, -35.2102, 1439, 159, 0, 0, 0, 0, 1401, 122, 45.6984, -1.12373, -45.6984, 1.12373, 1159, 123, 0, 0, 0, 0, 1117, 161, -1.49831, -39.3306, 1.49831, 39.3306, 1120, 313, 0, 0, 0, 0, 1088, 355, 37.0831, 1.49831, -37.0831, -1.49831, 834, 349, 0, 0, 0, 0, 797, 382, -1.87288, -38.956, 1.87288, 38.956, 800, 508, 0, 0, 0, 0, 768, 547, 39.7051, 0.749154, -39.7051, -0.749154, 528, 544, 5.24408, 18.7288, -5.24408, -18.7288, 474, 516, -2.62204, 29.5916, 2.62204, -29.5916, 483, 414, 35.5848, 0, -35.5848, 0, 437, 378, 59.9323, -0.374577, -59.9323, 0.374577, 288, 386, 0, 0, 0, 0, 212, 339, -6.74238, 33.3373, 6.74238, -33.3373, 191, 285, 0, 0, 0, 0, 191, 204 )
 }
 
 [sub_resource type="CapsuleShape2D" id=2]
+radius = 11.0
+height = 2.0
+
+[sub_resource type="Curve2D" id=13]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1120, 1100, 0, 0, 0, 0, 1121, 704, 48.6095, -1.65178, -48.6095, 1.65178, 1075, 662, 47.1434, -5.05108, -47.1434, 5.05108, 801, 665, 0, 0, 0, 0, 756, 706, -0.561231, -28.6228, 0.561231, 28.6228, 770, 865, 0, 0, 0, 0, 729, 904, 51.072, -1.12246, -51.072, 1.12246, 165, 905, 0, 0, 0, 0, 118, 863, -2.24492, 27.5003, 2.24492, -27.5003, 119, 414, 0, 0, 0, 0, 152, 303, 0, 0, 0, 0, 191, 197 )
+}
+
+[sub_resource type="CapsuleShape2D" id=14]
 radius = 11.0
 height = 2.0
 
@@ -1653,6 +1663,27 @@ hframes = 4
 [node name="CollisionShape" type="CollisionShape2D" parent="Path/enemy/Kinematic"]
 position = Vector2( 12, 15 )
 shape = SubResource( 2 )
+
+[node name="Path_b" type="Path2D" parent="."]
+curve = SubResource( 13 )
+
+[node name="enemy_b" type="PathFollow2D" parent="Path_b"]
+script = ExtResource( 16 )
+
+[node name="Kinematic_b" type="KinematicBody2D" parent="Path_b/enemy_b"]
+position = Vector2( 0, -8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite_b" type="Sprite" parent="Path_b/enemy_b/Kinematic_b"]
+position = Vector2( 1120, 1100 )
+texture = ExtResource( 8 )
+hframes = 4
+
+[node name="CollisionShape_b" type="CollisionShape2D" parent="Path_b/enemy_b/Kinematic_b"]
+position = Vector2( 1120, 1103 )
+shape = SubResource( 14 )
 
 [node name="Background" type="Node" parent="."]
 

@@ -14,6 +14,7 @@ func _ready():
 	pass # Replace with function body.
 	
 func _delete():
+	get_node("/root/node/Background/ATH/ath2/RichTextLabel").count += 25
 	get_parent().queue_free()
 	pass
 

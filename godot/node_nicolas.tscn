@@ -1640,6 +1640,7 @@ flags = 4
 script = ExtResource( 2 )
 
 [node name="Path" type="Path2D" parent="."]
+z_index = 1
 curve = SubResource( 1 )
 
 [node name="enemy" type="PathFollow2D" parent="Path"]
@@ -1667,11 +1668,13 @@ position = Vector2( 12, 15 )
 shape = SubResource( 2 )
 
 [node name="Path_b" type="Path2D" parent="."]
+z_index = 1
 curve = SubResource( 3 )
 
 [node name="enemy_b" type="PathFollow2D" parent="Path_b"]
 position = Vector2( 1120, 1100 )
 rotation = -1.5683
+z_index = 1
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Path_b/enemy_b"]

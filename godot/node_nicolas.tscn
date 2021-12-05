@@ -1798,7 +1798,6 @@ tab_size = 24
 text = "50 $
 "
 scroll_active = false
-script = ExtResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

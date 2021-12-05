@@ -1,13 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Turrets/turret.gd" type="Script" id=1]
 [ext_resource path="res://Turrets/sprites/canon2.png" type="Texture" id=2]
 [ext_resource path="res://Turrets/sprites/base.png" type="Texture" id=3]
 [ext_resource path="res://delete.gd" type="Script" id=4]
 [ext_resource path="res://Assets décors/delete.png" type="Texture" id=5]
+[ext_resource path="res://sound/shoot_sound.mp3" type="AudioStream" id=6]
 
 [node name="Turret" type="Node2D"]
 z_index = 2
+
+[node name="shoot_turret_sound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 960, 540 )
+stream = ExtResource( 6 )
 
 [node name="Button" type="Button" parent="."]
 margin_left = 35.0

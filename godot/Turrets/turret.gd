@@ -37,6 +37,7 @@ func shoot(enemy_position):
 	var hp = get_node("/root/node/Path/enemy/Kinematic/barre_hp")
 	var scale = get_node("/root/node/Path/enemy")
 	hp.scale.x -= scale.hp_scale/10
+	get_parent().get_node("shoot_turret_sound").play()
 	add_child(bullet)
 	pass
 

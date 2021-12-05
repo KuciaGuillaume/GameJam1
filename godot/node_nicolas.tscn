@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://enemy/enemy.gd" type="Script" id=1]
 [ext_resource path="res://main.gd" type="Script" id=2]
@@ -19,11 +19,35 @@
 [ext_resource path="res://credits.gd" type="Script" id=17]
 [ext_resource path="res://enemy/unknown.png" type="Texture" id=18]
 [ext_resource path="res://Assets décors/coin-piece.png" type="Texture" id=19]
+[ext_resource path="res://Assets décors/barre_hp.png" type="Texture" id=20]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1932, 290, 0, 0, 0, 0, 1928.72, 290.186, 0, 0, 0, 0, 1920.33, 287.896, 31.839, 2.24746, -31.839, -2.24746, 1484, 290, 1.87288, 11.2373, -1.87288, -11.2373, 1437, 262, -0.374577, 35.2102, 0.374577, -35.2102, 1439, 159, 0, 0, 0, 0, 1401, 122, 45.6984, -1.12373, -45.6984, 1.12373, 1159, 123, 0, 0, 0, 0, 1117, 161, -1.49831, -39.3306, 1.49831, 39.3306, 1120, 313, 0, 0, 0, 0, 1088, 355, 37.0831, 1.49831, -37.0831, -1.49831, 834, 349, 0, 0, 0, 0, 797, 382, -1.87288, -38.956, 1.87288, 38.956, 800, 508, 0, 0, 0, 0, 768, 547, 39.7051, 0.749154, -39.7051, -0.749154, 528, 544, 5.24408, 18.7288, -5.24408, -18.7288, 474, 516, -2.62204, 29.5916, 2.62204, -29.5916, 483, 414, 35.5848, 0, -35.5848, 0, 437, 378, 59.9323, -0.374577, -59.9323, 0.374577, 288, 386, 0, 0, 0, 0, 212, 339, -6.74238, 33.3373, 6.74238, -33.3373, 191, 285, 0, 0, 0, 0, 191, 204 )
 }
+
+[sub_resource type="GDScript" id=15]
+script/source = "extends Node2D
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+	
+func _proccess(delta):
+	print(\"tg\")
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 11.0
@@ -1663,6 +1687,14 @@ position = Vector2( 12, 12 )
 z_index = 1
 texture = ExtResource( 8 )
 hframes = 4
+
+[node name="barre_hp" type="Sprite" parent="Path/enemy/Kinematic"]
+position = Vector2( 10.6454, -1.65768 )
+rotation = -0.0393345
+scale = Vector2( 0.00481264, -0.00697599 )
+z_index = 2
+texture = ExtResource( 20 )
+script = SubResource( 15 )
 
 [node name="CollisionShape" type="CollisionShape2D" parent="Path/enemy/Kinematic"]
 position = Vector2( 12, 15 )

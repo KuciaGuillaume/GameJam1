@@ -14,6 +14,7 @@ func get_damages(damages):
 	hp -= damages
 	if (hp <= 0):
 		get_parent().get_parent().get_node("Background/ATH/ath2/RichTextLabel").count += 100
+		get_node("Kinematic/barre_hp").scale.x = 0.005
 		set_offset(0)
 		hp_max *= 1.5
 		hp = hp_max

@@ -34,6 +34,8 @@ func shoot(enemy_position):
 	bullet.get_node("bullet").direction = pos
 	bullet.get_node("bullet").rotation = get_node("canon").rotation
 	bullet.position = Vector2(0,0)
+	var hp = get_node("/root/node/Path/enemy/Kinematic/barre_hp")
+	hp.scale.x -= 0.0005
 	add_child(bullet)
 	pass
 

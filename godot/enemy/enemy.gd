@@ -9,7 +9,12 @@ func _physics_process(delta):
 	move(delta)
 	
 func move(delta):
+	var pos = (get_offset() + speed + delta)
 	set_offset(get_offset() + speed + delta)
+	if (pos >= 2300):
+		get_parent().get_parent().get_node("barre_hp2").scale.x -= 0.0001
+	if (get_parent().get_parent().get_node("barre_hp2").scale.x < 0):
+		get_tree().quit()
 
 func get_damages(damages):
 	hp -= damages

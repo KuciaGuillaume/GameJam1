@@ -48,3 +48,6 @@ func _add_turret():
 	turret.position = rect_global_position
 	turret_container.add_child(turret)
 	is_turret = true
+	#Remise à 0 de selected turret quand on pose une tourelle !
+	get_node("/root/node/globals").selected_turret = 0
+	get_node("/root/node/preview_turret/preview").set_texture(null)

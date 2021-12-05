@@ -10,6 +10,7 @@
 script = ExtResource( 1 )
 damage = 3
 attack_speed = 1.0
+shoot_range = 650.0
 bullet_type = 2
 
 [node name="base" type="Sprite" parent="turret"]

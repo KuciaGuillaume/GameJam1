@@ -1,7 +1,7 @@
 extends PathFollow2D
 
 export var speed = 3
-var hp_max = 50
+var hp_max = 10
 var hp = hp_max
 
 func _physics_process(delta):

@@ -10,6 +10,7 @@
 script = ExtResource( 1 )
 damage = 1
 attack_speed = 0.5
+shoot_range = 500.0
 
 [node name="base" type="Sprite" parent="turret"]
 position = Vector2( 31.7797, 30.3095 )

@@ -1,7 +1,7 @@
 extends Button
 
 export var button_name = ""
-onready var template_turrets = [preload("res://Turret1.tscn"), preload("res://Turret2.tscn"), preload("res://Turret3.tscn")]
+export onready var template_turrets = [preload("res://Turret1.tscn"), preload("res://Turret2.tscn"), preload("res://Turret3.tscn")]
 onready var turret_container = get_node("/root/node/Turrets")
 
 var canon_text1 = preload("res://Turrets/sprites/canon1.png")
@@ -47,7 +47,7 @@ func select_turret3():
 func _add_turret():
 	if (is_turret || get_node("/root/node/globals").selected_turret == 0):
 		return
-	var turret = template_turrets[get_node("/root/node/globals").selected_turret- 1].instance()
+	var turret = template_turrets[get_node("/root/node/globals").selected_turret - 1].instance()
 	turret.position = rect_global_position
 	turret_container.add_child(turret)
 	is_turret = true

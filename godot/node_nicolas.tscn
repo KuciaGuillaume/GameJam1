@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://enemy/enemy.gd" type="Script" id=1]
 [ext_resource path="res://main.gd" type="Script" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://preview_turret.gd" type="Script" id=15]
 [ext_resource path="res://enemy_b.gd" type="Script" id=16]
 [ext_resource path="res://credits.gd" type="Script" id=17]
+[ext_resource path="res://color50$.gd" type="Script" id=18]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -1777,6 +1778,52 @@ text = "0.00
 "
 scroll_active = false
 script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="50$" type="RichTextLabel" parent="Background/ATH/ath2"]
+anchor_right = 0.108
+margin_left = 393.125
+margin_top = 2981.43
+margin_right = 421.125
+margin_bottom = 2994.43
+rect_scale = Vector2( 5, 5 )
+tab_size = 24
+text = "50 $
+"
+scroll_active = false
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="100$" type="RichTextLabel" parent="Background/ATH/ath2"]
+anchor_right = 0.108
+margin_left = 709.227
+margin_top = 2982.06
+margin_right = 746.227
+margin_bottom = 2995.06
+rect_scale = Vector2( 5, 5 )
+tab_size = 24
+text = "100 $
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="100$2" type="RichTextLabel" parent="Background/ATH/ath2"]
+anchor_right = 0.108
+margin_left = 1025.78
+margin_top = 2983.86
+margin_right = 1062.78
+margin_bottom = 2996.86
+rect_scale = Vector2( 5, 5 )
+tab_size = 24
+text = "300 $
+"
+scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }

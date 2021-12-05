@@ -1,6 +1,6 @@
 extends PathFollow2D
 
-export var speed_b = 3
+export var speed_b = 1
 var hp_max_b = 50
 var hp_b = hp_max_b
 

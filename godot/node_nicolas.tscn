@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://enemy/enemy.gd" type="Script" id=1]
 [ext_resource path="res://main.gd" type="Script" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://sound/sound_background.wav" type="AudioStream" id=21]
 [ext_resource path="res://sound/shoot_sound.mp3" type="AudioStream" id=22]
 [ext_resource path="res://Assets décors/leo.png" type="Texture" id=23]
+[ext_resource path="res://Assets décors/gameover.png" type="Texture" id=24]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -2043,3 +2044,10 @@ position = Vector2( 1772.91, 42.2442 )
 scale = Vector2( 0.116229, 0.0752471 )
 z_index = 1
 texture = ExtResource( 19 )
+
+[node name="button" type="Node" parent="."]
+
+[node name="Button" type="Sprite" parent="button"]
+position = Vector2( 966.307, 544.361 )
+scale = Vector2( 6.42982, 6.4885 )
+texture = ExtResource( 24 )

@@ -14,7 +14,10 @@ func move(delta):
 	if (pos >= 2300):
 		get_parent().get_parent().get_node("barre_hp2").scale.x -= 0.0001
 	if (get_parent().get_parent().get_node("barre_hp2").scale.x < 0):
-		get_tree().quit()
+		get_parent().get_parent().get_node("button/Button").z_index = 5
+	else: 
+		get_parent().get_parent().get_node("button/Button").z_index = -3
+	
 
 func get_damages(damages):
 	hp -= damages

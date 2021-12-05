@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://enemy/enemy.gd" type="Script" id=1]
 [ext_resource path="res://main.gd" type="Script" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://enemy/unknown.png" type="Texture" id=18]
 [ext_resource path="res://Assets décors/coin-piece.png" type="Texture" id=19]
 [ext_resource path="res://Assets décors/barre_hp.png" type="Texture" id=20]
+[ext_resource path="res://sound/sound_background.wav" type="AudioStream" id=21]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -1640,6 +1641,11 @@ flags = 4
 
 [node name="node" type="Node2D"]
 script = ExtResource( 2 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 960, 540 )
+stream = ExtResource( 21 )
+autoplay = true
 
 [node name="Path" type="Path2D" parent="."]
 z_index = 1

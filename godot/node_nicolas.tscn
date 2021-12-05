@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://enemy/enemy.gd" type="Script" id=1]
 [ext_resource path="res://main.gd" type="Script" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://enemy_b.gd" type="Script" id=16]
 [ext_resource path="res://credits.gd" type="Script" id=17]
 [ext_resource path="res://enemy/unknown.png" type="Texture" id=18]
+[ext_resource path="res://Assets décors/coin-piece.png" type="Texture" id=19]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -33,7 +34,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1120, 1100, 0, 0, 0, 0, 1121, 704, 48.6095, -1.65178, -48.6095, 1.65178, 1075, 662, 47.1434, -5.05108, -47.1434, 5.05108, 801, 665, 0, 0, 0, 0, 756, 706, -0.561231, -28.6228, 0.561231, 28.6228, 770, 865, 0, 0, 0, 0, 729, 904, 51.072, -1.12246, -51.072, 1.12246, 165, 905, 0, 0, 0, 0, 118, 863, -2.24492, 27.5003, 2.24492, -27.5003, 119, 414, 0, 0, 0, 0, 152, 303, 0, 0, 0, 0, 191, 197 )
 }
 
-[sub_resource type="CapsuleShape2D" id=15]
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 25.9851
 height = 10.0496
 
@@ -1691,7 +1692,7 @@ texture = ExtResource( 18 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path_b/enemy_b/KinematicBody2D"]
 position = Vector2( -2, 0.00488281 )
 rotation = 1.5708
-shape = SubResource( 15 )
+shape = SubResource( 4 )
 
 [node name="Background" type="Node" parent="."]
 
@@ -1974,3 +1975,9 @@ script = ExtResource( 15 )
 [node name="preview" type="Sprite" parent="preview_turret"]
 modulate = Color( 1, 1, 1, 0.705882 )
 scale = Vector2( 0.4, 0.4 )
+
+[node name="coin-piece" type="Sprite" parent="."]
+position = Vector2( 1772.91, 42.2442 )
+scale = Vector2( 0.116229, 0.0752471 )
+z_index = 1
+texture = ExtResource( 19 )

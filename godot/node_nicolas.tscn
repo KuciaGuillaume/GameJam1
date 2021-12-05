@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://enemy/enemy.gd" type="Script" id=1]
 [ext_resource path="res://main.gd" type="Script" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Assets décors/barre_hp.png" type="Texture" id=20]
 [ext_resource path="res://sound/sound_background.wav" type="AudioStream" id=21]
 [ext_resource path="res://sound/shoot_sound.mp3" type="AudioStream" id=22]
+[ext_resource path="res://Assets décors/leo.png" type="Texture" id=23]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -1787,7 +1788,7 @@ tile_set = SubResource( 14 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 255, 36, 0, 65821, 37, 0, 11272214, 37, 0, 11272235, 37, 0, 11272255, 37, 0 )
+tile_data = PoolIntArray( -65488, 36, 0, -65460, 36, 0, 255, 36, 0, 65821, 37, 0, 11272214, 37, 0, 11272235, 37, 0, 11272255, 37, 0 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Background/ATH/ath2"]
 anchor_right = 0.108
@@ -1849,6 +1850,42 @@ text = "300 $
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
+}
+
+[node name="leo2" type="Sprite" parent="Background/ATH/ath2"]
+position = Vector2( 933.25, 114.77 )
+scale = Vector2( 0.629029, 0.430962 )
+texture = ExtResource( 23 )
+
+[node name="leo" type="RichTextLabel" parent="Background/ATH/ath2"]
+anchor_right = 0.108
+margin_left = 1269.71
+margin_top = 43.5718
+margin_right = 1411.71
+margin_bottom = 122.572
+rect_scale = Vector2( 3, 3 )
+size_flags_stretch_ratio = 0.0
+text = "Empêche les étudiants d'atteindre la salle machine"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="leo3" type="RichTextLabel" parent="Background/ATH/ath2"]
+anchor_right = 0.108
+margin_left = 1042.0
+margin_top = 86.0
+margin_right = 1099.0
+margin_bottom = 103.0
+rect_scale = Vector2( 3, 3 )
+size_flags_stretch_ratio = 0.0
+text = "OBJECTIF
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 
 [node name="ATH" type="Node" parent="."]

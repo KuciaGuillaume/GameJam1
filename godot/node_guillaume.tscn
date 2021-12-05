@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://enemy/creature-sheet.png" type="Texture" id=1]
 [ext_resource path="res://enemy/enemy.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets décors/[OC] House for RPG games!.png" type="Texture" id=7]
 [ext_resource path="res://Assets décors/ath.png" type="Texture" id=8]
 [ext_resource path="res://Assets décors/tourelle.png" type="Texture" id=9]
+[ext_resource path="res://credit.gd" type="Script" id=10]
 [ext_resource path="res://buttons.gd" type="Script" id=13]
 [ext_resource path="res://main.gd" type="Script" id=14]
 
@@ -1699,7 +1700,24 @@ tile_set = SubResource( 10 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 65821, 37, 0, 11272214, 37, 0 )
+tile_data = PoolIntArray( 255, 36, 0, 65821, 37, 0, 11272214, 37, 0 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background/ATH"]
+margin_left = 1706.0
+margin_top = 54.0
+margin_right = 1735.0
+margin_bottom = 66.0
+size_flags_vertical = 3
+visible_characters = 5711
+percent_visible = 1427.75
+tab_size = 12
+text = "0.00
+"
+scroll_active = false
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="intéraction avec ATH" type="Node" parent="."]
 

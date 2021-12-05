@@ -17,28 +17,31 @@ func _button_quit():
 var is_turret = false
 
 func select_turret1():
-	if (get_node("/root/node/globals").selected_turret == 1):
-		get_node("/root/node/globals").selected_turret = 0
-		get_node("/root/node/preview_turret/preview").set_texture(null)
-	else:
-		get_node("/root/node/globals").selected_turret = 1
-		get_node("/root/node/preview_turret/preview").set_texture(canon_text1)
+	if (get_parent().get_parent().get_node("Background/ATH/ath2/RichTextLabel").count >= 50):
+		if (get_node("/root/node/globals").selected_turret == 1):
+			get_node("/root/node/globals").selected_turret = 0
+			get_node("/root/node/preview_turret/preview").set_texture(null)
+		else:
+			get_node("/root/node/globals").selected_turret = 1
+			get_node("/root/node/preview_turret/preview").set_texture(canon_text1)
 
 func select_turret2():
-	if (get_node("/root/node/globals").selected_turret == 2):
-		get_node("/root/node/globals").selected_turret = 0
-		get_node("/root/node/preview_turret/preview").set_texture(null)
-	else:
-		get_node("/root/node/globals").selected_turret = 2
-		get_node("/root/node/preview_turret/preview").set_texture(canon_text2)
+	if (get_parent().get_parent().get_node("Background/ATH/ath2/RichTextLabel").count >= 100):
+		if (get_node("/root/node/globals").selected_turret == 2):
+			get_node("/root/node/globals").selected_turret = 0
+			get_node("/root/node/preview_turret/preview").set_texture(null)
+		else:
+			get_node("/root/node/globals").selected_turret = 2
+			get_node("/root/node/preview_turret/preview").set_texture(canon_text2)
 
 func select_turret3():
-	if (get_node("/root/node/globals").selected_turret == 3):
-		get_node("/root/node/globals").selected_turret = 0
-		get_node("/root/node/preview_turret/preview").set_texture(null)
-	else:
-		get_node("/root/node/globals").selected_turret = 3
-		get_node("/root/node/preview_turret/preview").set_texture(canon_text3)
+	if (get_parent().get_parent().get_node("Background/ATH/ath2/RichTextLabel").count >= 300):
+		if (get_node("/root/node/globals").selected_turret == 3):
+			get_node("/root/node/globals").selected_turret = 0
+			get_node("/root/node/preview_turret/preview").set_texture(null)
+		else:
+			get_node("/root/node/globals").selected_turret = 3
+			get_node("/root/node/preview_turret/preview").set_texture(canon_text3)
 
 
 func _add_turret():
@@ -49,5 +52,11 @@ func _add_turret():
 	turret_container.add_child(turret)
 	is_turret = true
 	#Remise à 0 de selected turret quand on pose une tourelle !
+	if (get_node("/root/node/globals").selected_turret == 1):
+		get_parent().get_parent().get_node("Background/ATH/ath2/RichTextLabel").count -= 50
+	if (get_node("/root/node/globals").selected_turret == 2):
+		get_parent().get_parent().get_node("Background/ATH/ath2/RichTextLabel").count -= 100
+	if (get_node("/root/node/globals").selected_turret == 3):
+		get_parent().get_parent().get_node("Background/ATH/ath2/RichTextLabel").count -= 300
 	get_node("/root/node/globals").selected_turret = 0
 	get_node("/root/node/preview_turret/preview").set_texture(null)
